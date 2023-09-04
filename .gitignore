@@ -1,0 +1,8 @@
+build
+dist
+node_modules
+.idea
+.vscode
+.DS_Store
+
+storybook-static
