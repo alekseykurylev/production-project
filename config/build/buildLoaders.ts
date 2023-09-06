@@ -16,7 +16,7 @@ export const buildLoaders = ({
 
   const svgLoader = {
     test: /\.svg$/,
-    use: ["@svgr/webpack"],
+    use: [{ loader: "@svgr/webpack", options: { icon: "24" } }],
   };
 
   const cssLoader = {
