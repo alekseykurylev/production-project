@@ -1,0 +1,7 @@
+.eslintrc.js
+webpack.config.ts
+**/*.ts
+**/*.tsx
+**/*.md
+**/*.svg
+**/*.html

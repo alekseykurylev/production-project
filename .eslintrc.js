@@ -11,6 +11,7 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:import/recommended",
+    "plugin:i18next/recommended",
     "airbnb",
     "prettier",
   ],
@@ -30,7 +31,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["@typescript-eslint", "react"],
+  plugins: ["@typescript-eslint", "react", "i18next"],
   rules: {
     "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx", ".ts", ".tsx"] }],
     "import/no-unresolved": "off",
@@ -45,6 +46,7 @@ module.exports = {
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "warn",
     "no-underscore-dangle": "off",
+    "i18next/no-literal-string": ["error", { markupOnly: true }],
   },
   globals: {
     __IS_DEV__: true,
