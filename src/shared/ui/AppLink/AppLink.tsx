@@ -14,7 +14,7 @@ type AppLinkProps = {
 } & NavLinkProps;
 
 export const AppLink: React.FC<AppLinkProps> = (props) => {
-  const { to, children, className, theme = AppLinkTheme.PRIMARY, ...other } = props;
+  const { to, children, className, theme = AppLinkTheme.PRIMARY, ...others } = props;
 
   return (
     <NavLink
@@ -28,7 +28,7 @@ export const AppLink: React.FC<AppLinkProps> = (props) => {
         )
       }
       to={to}
-      {...other}>
+      {...others}>
       {children}
     </NavLink>
   );

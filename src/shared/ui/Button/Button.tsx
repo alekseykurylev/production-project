@@ -12,11 +12,11 @@ type ButtonProps = {
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: React.FC<ButtonProps> = (props) => {
-  const { className, children, theme, ...other } = props;
+  const { className, children, theme, ...others } = props;
   return (
     <button
       className={classNames(styles.Button, {}, [className, styles[theme]])}
-      {...other}
+      {...others}
       type='button'>
       {children}
     </button>
