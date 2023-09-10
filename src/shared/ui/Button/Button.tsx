@@ -8,7 +8,7 @@ export enum ThemeButton {
 
 type ButtonProps = {
   className?: React.ReactNode;
-  theme: ThemeButton;
+  theme?: ThemeButton;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: React.FC<ButtonProps> = (props) => {

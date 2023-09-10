@@ -1,4 +1,5 @@
 import * as React from "react";
+import { BugButton } from "app/providers/ErrorBoundary";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ThemeButton } from "shared/ui/Button";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
