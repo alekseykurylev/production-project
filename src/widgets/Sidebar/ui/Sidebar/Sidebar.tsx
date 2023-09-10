@@ -1,5 +1,4 @@
 import * as React from "react";
-import { BugButton } from "app/providers/ErrorBoundary";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ThemeButton } from "shared/ui/Button";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
@@ -18,9 +17,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
   };
 
   return (
-    <div className={classNames(styles.Sidebar, { [styles.collapsed]: collapsed }, [className])}>
-      <Button theme={ThemeButton.CLEAR} onClick={onToggle}>
-        toggle
+    <div
+      data-testid='sidebar'
+      className={classNames(styles.Sidebar, { [styles.collapsed]: collapsed }, [className])}>
+      <Button data-testid='sidebar-toggle' theme={ThemeButton.CLEAR} onClick={onToggle}>
+        7777
       </Button>
       <div className={styles.switchers}>
         <ThemeSwitcher />
