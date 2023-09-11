@@ -13,10 +13,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Staring Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          fetch-depth: 0
           node-version: ${{ matrix.node-version }}
       - name: Install modules
         run: npm install
