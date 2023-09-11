@@ -16,8 +16,8 @@ jobs:
       - name: Staring Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
           fetch-depth: 0
+          node-version: ${{ matrix.node-version }}
       - name: Install modules
         run: npm install
       - name: Build production project
@@ -32,3 +32,5 @@ jobs:
         run: npm run storybook:build
       - name: Screenshot testing
         run: npm run test:ui
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
