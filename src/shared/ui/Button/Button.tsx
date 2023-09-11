@@ -4,10 +4,12 @@ import styles from "./Button.module.scss";
 
 export enum ThemeButton {
   CLEAR = "clear",
+  OUTLINE = "outline",
 }
 
 type ButtonProps = {
-  className?: React.ReactNode;
+  children: React.ReactNode;
+  className?: string;
   theme?: ThemeButton;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 

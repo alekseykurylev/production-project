@@ -9,8 +9,9 @@ export enum AppLinkTheme {
 }
 
 type AppLinkProps = {
-  className?: string;
   theme?: AppLinkTheme;
+  className?: string;
+  children: React.ReactNode;
 } & NavLinkProps;
 
 export const AppLink: React.FC<AppLinkProps> = (props) => {

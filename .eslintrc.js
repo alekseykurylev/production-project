@@ -14,6 +14,7 @@ module.exports = {
     "plugin:import/recommended",
     "plugin:i18next/recommended",
     "plugin:jest-dom/recommended",
+    "plugin:storybook/recommended",
     "airbnb",
     "prettier",
   ],
@@ -56,7 +57,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["**/src/**/*.test.{ts,tsx}"],
+      files: ["**/src/**/*.test.{ts,tsx}", "**/src/**/*.stories.{ts,tsx}"],
       rules: {
         "i18next/no-literal-string": "off",
       },
