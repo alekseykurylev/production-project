@@ -20,3 +20,21 @@
   width: 100%;
   gap: 20px;
 }
+
+.buttonToggle {
+  color: var(--inverted-primary-color);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
