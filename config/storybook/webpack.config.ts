@@ -20,9 +20,10 @@ export default ({ config }: { config: webpack.Configuration }) => {
   if (imageRule) {
     imageRule.exclude = /\.svg$/;
   }
+
   rules.push({
     test: /\.svg$/,
-    use: ["@svgr/webpack"],
+    use: [{ loader: "@svgr/webpack", options: { icon: "24" } }],
   });
 
   return config;
