@@ -36,5 +36,6 @@ jobs:
       - name: Screenshot testing
         uses: chromaui/action@v1
         with:
-          projectToken: ${{ secrets.CHROMATIC_ARCHIVE_PROJECT_TOKEN }}
           buildScriptName: storybook:build
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
