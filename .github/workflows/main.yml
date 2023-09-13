@@ -35,6 +35,6 @@ jobs:
         if: always()
       - name: Screenshot testing
         uses: chromaui/action@v1
-        env:
-          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        with:
+          projectToken: ${{ secrets.CHROMATIC_ARCHIVE_PROJECT_TOKEN }}
           buildScriptName: storybook:build
