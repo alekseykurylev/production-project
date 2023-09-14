@@ -1,8 +1,8 @@
 import * as React from "react";
 import type { Preview } from "@storybook/react";
+import { Theme } from "../../src/app/providers/ThemeProvider";
 import { ThemeDecorator } from "../../src/shared/config/storybook/ThemeDecorator";
 import { RouteDecorator } from "../../src/shared/config/storybook/RouteDecorator";
-import { Theme } from "../../src/app/providers/ThemeProvider";
 
 const preview: Preview = {
   parameters: {
@@ -13,11 +13,20 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    themes: {
+      default: Theme.LIGHT,
+      list: [
+        { name: Theme.LIGHT, class: Theme.LIGHT },
+        { name: Theme.DARK, class: Theme.DARK },
+      ],
+      target: "html",
+    },
+    backgrounds: { disable: true },
   },
   decorators: [
     (Story) => (
       <RouteDecorator>
-        <ThemeDecorator theme={Theme.DARK}>
+        <ThemeDecorator>
           <Story />
         </ThemeDecorator>
       </RouteDecorator>

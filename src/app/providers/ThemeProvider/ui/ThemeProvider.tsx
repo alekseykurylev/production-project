@@ -17,6 +17,16 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     [theme],
   );
 
+  React.useEffect(() => {
+    const root = document.documentElement;
+    if (root.classList.contains(Theme.LIGHT) || root.classList.contains(Theme.DARK)) {
+      root.classList.remove(Theme.LIGHT, Theme.DARK);
+      root.classList.add(theme);
+    } else {
+      root.classList.add(theme);
+    }
+  }, [theme]);
+
   return <ThemeContext.Provider value={defaultProps}>{children}</ThemeContext.Provider>;
 };
 
