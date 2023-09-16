@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button, ThemeButton } from "./Button";
+import { Button } from "./Button";
 
 const meta = {
   title: "shared/Button",
@@ -8,28 +8,52 @@ const meta = {
     layout: "fullscreen",
   },
   argTypes: {
-    theme: [ThemeButton.CLEAR],
     className: {
       table: {
         disable: true,
       },
     },
   },
+  args: {
+    children: "Button",
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ padding: "40px" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Clear: Story = {
+export const Usage: Story = {
   args: {
-    theme: ThemeButton.CLEAR,
-    children: "button",
+    variant: "filled",
+    size: "m",
   },
 };
 
-export const Outline: Story = {
-  args: {
-    theme: ThemeButton.OUTLINE,
-    children: "button",
-  },
-};
+export const Variants = () => (
+  <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+    <Button variant='filled'>Filled</Button>
+    <Button variant='outline'>Outline</Button>
+    <Button variant='clear'>Clear</Button>
+  </div>
+);
+
+export const Sizes = () => (
+  <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+    <Button variant='outline' size='s'>
+      sm
+    </Button>
+    <Button variant='outline' size='m'>
+      md
+    </Button>
+    <Button variant='outline' size='l'>
+      lg
+    </Button>
+  </div>
+);
