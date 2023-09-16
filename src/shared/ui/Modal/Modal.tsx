@@ -1,6 +1,6 @@
 import * as React from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ThemeButton } from "shared/ui/Button";
+import { Button } from "shared/ui/Button";
 import { Portal } from "shared/ui/Portal";
 import CrossIcon from "shared/assets/icons/cross.svg";
 import styles from "./Modal.module.scss";
@@ -52,7 +52,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
       <div className={classNames(styles.Modal, mods, [className])}>
         <div className={styles.overlay} onClick={closeHandler}>
           <div className={styles.content} onClick={onContentClick}>
-            <Button className={styles.close} onClick={onClose} theme={ThemeButton.CLEAR}>
+            <Button className={styles.close} onClick={onClose} variant='clear' size='s'>
               <CrossIcon width={14} height={14} />
             </Button>
             {children}

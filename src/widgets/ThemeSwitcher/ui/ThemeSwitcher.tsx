@@ -3,7 +3,7 @@ import { useTheme, Theme } from "app/providers/ThemeProvider";
 import { classNames } from "shared/lib/classNames/classNames";
 import SunIcon from "shared/assets/icons/sun.svg";
 import MoonIcon from "shared/assets/icons/moon.svg";
-import { Button, ThemeButton } from "shared/ui/Button";
+import { Button } from "shared/ui/Button";
 import styles from "./ThemeSwitcher.module.scss";
 
 interface ThemeSwitcherProps {
@@ -16,7 +16,7 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className }) => {
   return (
     <Button
       className={classNames(styles.ThemeSwitcher, {}, [className])}
-      theme={ThemeButton.CLEAR}
+      variant='clear'
       onClick={toggleTheme}>
       {theme === Theme.LIGHT ? <SunIcon /> : <MoonIcon />}
     </Button>
