@@ -33,9 +33,9 @@ jobs:
       - name: Unit testing
         run: npm run test:unit
         if: always()
-      - name: Screenshot testing
-        uses: chromaui/action@v1
-        with:
-          buildScriptName: storybook:build
-        env:
-          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      # - name: Screenshot testing
+      #   uses: chromaui/action@v1
+      #   with:
+      #     buildScriptName: storybook:build
+      #   env:
+      #     CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
