@@ -6,14 +6,14 @@ import { i18nForTests } from "shared/config/i18n";
 import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { DeepPartial } from "@reduxjs/toolkit";
 
-export interface componentRenderOption {
+export interface componentRenderOptions {
   initialState?: DeepPartial<StateSchema>;
 }
 
-export function render(ui: React.ReactNode, store?: componentRenderOption) {
+export function render(ui: React.ReactNode, options: componentRenderOptions = {}) {
   return testingLibraryRender(<>{ui}</>, {
     wrapper: ({ children }: { children: React.ReactNode }) => (
-      <StoreProvider initialState={store.initialState}>
+      <StoreProvider initialState={options.initialState}>
         <MemoryRouter>
           <I18nextProvider i18n={i18nForTests}>{children}</I18nextProvider>
         </MemoryRouter>
@@ -21,15 +21,3 @@ export function render(ui: React.ReactNode, store?: componentRenderOption) {
     ),
   });
 }
-
-// const AllTheProviders = ({ children }: { children: React.ReactNode }) => (
-//   <MemoryRouter>
-//     <I18nextProvider i18n={i18nForTests}>{children}</I18nextProvider>
-//   </MemoryRouter>
-// );
-
-// const customRender = (ui: React.ReactElement, options?: Omit<RenderOptions, "wrapper">) =>
-//   render(ui, { wrapper: AllTheProviders, ...options });
-
-// export * from "@testing-library/react";
-// export { customRender as render };
