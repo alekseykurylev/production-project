@@ -36,12 +36,7 @@ module.exports = {
     "react/function-component-definition": "off",
     "no-shadow": "off",
     "import/extensions": "off",
-    "import/no-extraneous-dependencies": [
-      "warn",
-      {
-        devDependencies: ["**/*.test.ts", "**/*.test.tsx", "**/testUtils.tsx"],
-      },
-    ],
+    "import/no-extraneous-dependencies": "off",
     "no-underscore-dangle": "off",
     "i18next/no-literal-string": [
       "error",
@@ -55,6 +50,8 @@ module.exports = {
     "jsx-a11y/no-static-element-interactions": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
+    "react/jsx-no-useless-fragment": "off",
+    "no-param-reassign": "off",
   },
   globals: {
     __IS_DEV__: true,

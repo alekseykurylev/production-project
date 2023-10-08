@@ -1,5 +1,5 @@
-import { screen, render, fireEvent } from "shared/lib/testUtils/testUtils";
-import { Sidebar } from "widgets/Sidebar";
+import { screen, render, fireEvent } from "shared/lib/testUtils";
+import { Sidebar } from "./Sidebar";
 
 describe("Sidebar", () => {
   test("render", () => {
