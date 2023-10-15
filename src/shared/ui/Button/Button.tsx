@@ -1,5 +1,5 @@
 import * as React from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib/classNames";
 import styles from "./Button.module.scss";
 
 export const buttonSize = ["s", "m", "l"] as const;

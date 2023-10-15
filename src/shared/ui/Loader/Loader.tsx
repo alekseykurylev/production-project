@@ -1,5 +1,5 @@
 import * as React from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib/classNames";
 import { useTranslation } from "react-i18next";
 import { VisuallyHidden } from "../VisuallyHidden";
 import styles from "./Loader.module.scss";

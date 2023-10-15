@@ -1,5 +1,5 @@
 import * as React from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib/classNames";
 import { Button } from "shared/ui/Button";
 import { Portal } from "shared/ui/Portal";
 import CrossIcon from "shared/assets/icons/cross.svg";
@@ -10,14 +10,22 @@ interface ModalProps {
   children: React.ReactNode;
   isOpen?: boolean;
   onClose?: () => void;
+  lazy?: boolean;
 }
 
 export const Modal: React.FC<ModalProps> = (props) => {
-  const { className, children, isOpen, onClose } = props;
+  const { className, children, isOpen, lazy, onClose } = props;
+  const [isMounted, setIsMounted] = React.useState(false);
 
   const mods: Record<string, boolean> = {
     [styles.opened]: isOpen,
   };
+
+  React.useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
 
   const closeHandler = React.useCallback(() => {
     if (onClose) {
@@ -46,6 +54,10 @@ export const Modal: React.FC<ModalProps> = (props) => {
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [isOpen, onKeyDown]);
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal>

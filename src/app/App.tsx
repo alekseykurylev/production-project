@@ -4,7 +4,7 @@ import { Sidebar } from "widgets/Sidebar/ui/Sidebar/Sidebar";
 import { AppRouter } from "./providers/router";
 
 export const App = () => (
-  <div className='"app"'>
+  <div className='app'>
     <React.Suspense fallback=''>
       <Navbar />
       <div className='content-page'>

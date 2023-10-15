@@ -1,6 +1,6 @@
 import * as React from "react";
 import { NavLink, type NavLinkProps } from "react-router-dom";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib/classNames";
 import styles from "./AppLink.module.scss";
 
 export enum AppLinkTheme {

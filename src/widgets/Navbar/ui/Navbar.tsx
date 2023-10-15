@@ -1,9 +1,9 @@
 import * as React from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib/classNames";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink";
 import { Button } from "shared/ui/Button";
-import { Modal } from "shared/ui/Modal/Modal";
+import { LoginModal } from "features/AuthByUserName";
 import styles from "./Navbar.module.scss";
 
 interface NavbarProps {
@@ -14,8 +14,12 @@ export const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIisAuthModal] = React.useState(false);
 
-  const onToggleModal = React.useCallback(() => {
-    setIisAuthModal((prev) => !prev);
+  const onCloseModal = React.useCallback(() => {
+    setIisAuthModal(false);
+  }, []);
+
+  const onShowModal = React.useCallback(() => {
+    setIisAuthModal(true);
   }, []);
 
   return (
@@ -29,12 +33,10 @@ export const Navbar = ({ className }: NavbarProps) => {
           {t("О сайте")}
         </AppLink>
       </nav>
-      <Button variant='filled' size='s' onClick={onToggleModal}>
+      <Button variant='filled' size='s' onClick={onShowModal}>
         {t("Войти")}
       </Button>
-      <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-        123
-      </Modal>
+      <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
     </div>
   );
 };

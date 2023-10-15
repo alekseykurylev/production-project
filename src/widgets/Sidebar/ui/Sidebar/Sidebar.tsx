@@ -2,7 +2,7 @@ import * as React from "react";
 import { useTranslation } from "react-i18next";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { LangSwitcher } from "widgets/LangSwitcher";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib/classNames";
 import { Button } from "shared/ui/Button";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink";
 import { RoutePath } from "shared/config/routeConfig";

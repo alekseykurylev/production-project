@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useTheme, Theme } from "app/providers/ThemeProvider";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib/classNames";
 import SunIcon from "shared/assets/icons/sun.svg";
 import MoonIcon from "shared/assets/icons/moon.svg";
 import { Button } from "shared/ui/Button";
