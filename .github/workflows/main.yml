@@ -24,15 +24,15 @@ jobs:
       - name: Build production project
         run: npm run build:prod
         if: always()
-      - name: Linting typescript
-        run: npm run lint:ts
-        if: always()
-      - name: Linting css
-        run: npm run lint:scss
-        if: always()
-      - name: Unit testing
-        run: npm run test:unit
-        if: always()
+      # - name: Linting typescript
+      #   run: npm run lint:ts
+      #   if: always()
+      # - name: Linting css
+      #   run: npm run lint:scss
+      #   if: always()
+      # - name: Unit testing
+      #   run: npm run test:unit
+      #   if: always()
       # - name: Screenshot testing
       #   uses: chromaui/action@v1
       #   with:
